@@ -1,6 +1,8 @@
 # asciinema-polish
 
-A command-line Perl tool for processing and refining Asciinema terminal recording JSON files by adjusting inter-event idle times. This allows for smoother, faster, and more natural playback by applying context-aware timing rules to recorded input ("i") and output ("o") events. Ideal for cleaning up demos, tutorials or other terminal recordings that may have excessive delays or unnatural pauses.
+A command-line Perl tool for processing and refining [asciicast
+v2](https://github.com/asciinema/asciinema/blob/master/doc/asciicast-v2.md)
+files produced by [asciinema recorder](https://github.com/asciinema/asciinema), by adjusting inter-event idle times. This allows for smoother, faster, and more natural playback by applying context-aware timing rules to recorded input ("i") and output ("o") events. Ideal for cleaning up demos, tutorials or other terminal recordings that may have excessive delays or unnatural pauses.
 
 ## Demonstration
 
@@ -10,7 +12,7 @@ A command-line Perl tool for processing and refining Asciinema terminal recordin
 
 ## Why?
 
-Asciinema captures real-time terminal interaction for accurate playback — but sometimes raw recordings contain unnatural pauses or slow outputs. Put simply, they lack polish. Rather than aiming for the perfect recording upfront, this tool intelligently optimizes event intervals to make playback seem polished and viewer-friendly.
+Asciinema captures real-time terminal interaction for accurate playback — but sometimes raw recordings contain unnatural pauses or slow outputs. Put simply, they lack polish. Rather than aiming for the perfect recording upfront, this tool intelligently optimizes event intervals to make playback seem polished and professional.
 
 ## Features
 
@@ -76,14 +78,26 @@ EOF
 Run it with:
 
 ```bash
-docker run --rm -i svg-term-cli <asciinema-recording-polished >asciinema-recording-polished.svg
+docker run --rm -i svg-term-cli <asciinema-recording-polished.cast >asciinema-recording-polished.svg
+```
+
+### agg
+
+[`agg`](https://github.com/asciinema/agg.git) is a tool for converting Asciinema recordings to GIF format.
+
+Build it with:
+
+```bash
+docker build --tag=agg https://github.com/asciinema/agg.git
+```
+
+Then run it with e.g.:
+
+```bash
+docker run -v /tmp:/tmp agg /tmp/asciinema-recording-polished.cast /tmp/asciinema-recording-polished.gif
 ```
 
 ## License
 
 MIT License  
-© 2023–2024 Struan Bartlett
-
----
-
-Let me know if you'd like a condensed one-line summary for your GitHub repo sidebar as well!
+© 2023–2025 Struan Bartlett
