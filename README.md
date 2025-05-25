@@ -2,6 +2,12 @@
 
 A command-line Perl tool for processing and refining Asciinema terminal recording JSON files by adjusting inter-event idle times. This allows for smoother, faster, and more natural playback by applying context-aware timing rules to recorded input ("i") and output ("o") events. Ideal for cleaning up demos, tutorials or other terminal recordings that may have excessive delays or unnatural pauses.
 
+## Demonstration
+
+| Original recording | Polished recording |
+| --- | --- |
+| ![nXByDK-1](https://github.com/user-attachments/assets/43ff66ae-03bf-4345-9d80-57f86ee60717) | ![nXByDK-2](https://github.com/user-attachments/assets/03533eb9-317f-40fa-b7b2-a4c35a262bb9) |
+
 ## Why?
 
 Asciinema captures real-time terminal interaction for accurate playback — but sometimes raw recordings contain unnatural pauses or slow outputs. Put simply, they lack polish. Rather than aiming for the perfect recording upfront, this tool intelligently optimizes event intervals to make playback seem polished and viewer-friendly.
